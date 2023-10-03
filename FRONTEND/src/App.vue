@@ -1,20 +1,30 @@
 <template>
   <v-app>
-    <v-toolbar color="primary" density="compact" class="d-flex justify-start">
-      <v-app-bar-title>TEILZEITPRÜFUNG</v-app-bar-title>
+    <v-toolbar :elevation="5" color="primary" density="compact" class="d-flex justify-start">
+      <template v-slot:prepend><v-icon icon="mdi-test-tube"></v-icon></template>
+      <v-toolbar-title>TEILZEITPRÜFUNG 2023/2024</v-toolbar-title>
       <v-toolbar-items>
-        <router-link :to="{ name: 'ÜbersichtView' }"><v-btn> Schulweise Übersicht</v-btn></router-link>
-        <router-link :to="{ name: 'PrüfungView' }"><v-btn> Prüfung</v-btn></router-link>
+
+        <v-btn prepend-icon="mdi-view-dashboard" variant="elevated" color="primary" :to="{name: 'ÜbersichtView'}">
+          Schulweie Übersicht
+        </v-btn>
+        <v-btn prepend-icon="mdi-check-circle" variant="elevated" color="primary" :to="{name: 'PrüfungView'}">
+          Prüfung
+        </v-btn>
+
+  
       </v-toolbar-items>
       <v-spacer></v-spacer>
-      
+
     </v-toolbar>
     <router-view />
   </v-app>
 </template>
 
 <script setup>
-import PrüfungView from './views/PrüfungView.vue';
 
 //
-</script>
+</script> 
+
+
+
