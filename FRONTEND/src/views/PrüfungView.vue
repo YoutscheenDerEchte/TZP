@@ -1,18 +1,25 @@
 <template>
     <div class="containerH">
         <v-sheet :style="{ height: `calc(100vh - ${toolbarHeight}px)` }" :width="300" color="grey-darken-3">
-            <v-combobox autofocus="true" label="Schulauswahl" :items="schulen" v-model="gewählteSchule"></v-combobox>
+            <v-card color="grey-darken-3">
+                <p>Schule auswählen:</p>
+                <v-combobox autofocus="true" label="Schulauswahl" :items="schulen" v-model="gewählteSchule"></v-combobox>
+                <div class="buttonVertikal">
+                    <v-btn block rounded="xl" color="yellow-lighten-2" dark>Daten laden</v-btn>
+                    <v-btn block rounded="xl" color="light-green-accent-2" dark>Speichern</v-btn>
+                </div>
+            </v-card>
             <v-text-field v-model="search" append-icon="mdi-magnify" label="Suche" single-line hide-details></v-text-field>
         </v-sheet>
-            <v-data-table density="compact" v-model:items-per-page="itemsPerPage" :headers="headers" :items="desserts"
-                item-value="name" class="elevation-1" :search="search">
-                <template v-slot:item.prüfstatus></template>
-                <template v-slot:item.action>
-                    <v-btn outline color="primary" dark>OK</v-btn>
-                    <v-btn outline color="primary" dark>LAS</v-btn>
-                    <v-btn outline color="primary" dark>Bemerkung</v-btn>
-                </template>
-            </v-data-table>
+        <v-data-table density="compact" v-model:items-per-page="itemsPerPage" :headers="headers" :items="desserts"
+            item-value="name" class="elevation-1" :search="search">
+            <template v-slot:item.prüfstatus></template>
+            <template v-slot:item.action>
+                <v-btn  rounded="xl" outline color="light-green-accent-3" dark>OK</v-btn>
+                <v-btn  rounded="xl" outline color="deep-orange" dark>LAS</v-btn>
+                <v-btn  rounded="xl" outline color="amber-accent-4" dark>Bemerkung</v-btn>
+            </template>
+        </v-data-table>
 
     </div>
 </template>
@@ -135,9 +142,18 @@ const desserts = ref([
 </script>
 
 <style  scoped>
+.v-data-table-header th {
+  font-weight: bold; /* oder ein anderer gewünschter Wert */
+}
 .containerH {
     display: inline-flex;
 }
 
-
+.buttonVertikal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
 </style>
