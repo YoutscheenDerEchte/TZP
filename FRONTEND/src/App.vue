@@ -1,9 +1,10 @@
 <template>
-  <v-app-bar density="compact">
-    <v-app-bar-nav-icon></v-app-bar-nav-icon>
-    <v-toolbar-title>Title</v-toolbar-title>
-  </v-app-bar>
-  <router-view />
+  <v-app>
+    <v-app-bar density="compact">
+      <v-app-bar-title>TEILZEITPRÜFUNG</v-app-bar-title>
+    </v-app-bar>
+    <router-view />
+  </v-app>
 </template>
 
 <script setup>
