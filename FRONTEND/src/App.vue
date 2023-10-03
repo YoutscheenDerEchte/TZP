@@ -2,7 +2,7 @@
   <v-app>
     <v-toolbar :elevation="5" color="primary" density="compact" class="d-flex justify-start">
       <template v-slot:prepend><v-icon icon="mdi-test-tube"></v-icon></template>
-      <v-toolbar-title>TEILZEITPRÜFUNG 2023/2024</v-toolbar-title>
+      <v-toolbar-title  class="font-weight-black">TEILZEITPRÜFUNG 2023/2024</v-toolbar-title>
       <v-toolbar-items>
 
         <v-btn prepend-icon="mdi-view-dashboard" variant="elevated" color="primary" :to="{name: 'ÜbersichtView'}">
